@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Caikexin Cai | Personal Homepage</title>
+
+<style>
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+background:#f5f7fa;
+margin:0;
+padding:0;
+}
+
+.header{
+background:#1f3c88;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:35px;
+}
+
+.section{
+margin-top:45px;
+}
+
+h2{
+border-bottom:2px solid #eee;
+padding-bottom:8px;
+}
+
+.lang{
+position:fixed;
+top:20px;
+right:20px;
+}
+
+button{
+padding:8px 14px;
+margin-left:5px;
+border:none;
+background:#3498db;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#2980b9;
+}
+
+.footer{
+margin-top:40px;
+color:gray;
+font-size:14px;
+}
+
+ul{
+line-height:1.8;
+}
+
+</style>
+
+<script>
+
+function cn(){
+
+document.getElementById("title").innerText="个人主页"
+
+document.getElementById("name").innerText="姓名：蔡可歆"
+
+document.getElementById("school").innerText="学校：华东政法大学"
+
+document.getElementById("major").innerText="专业：数量金融（2024级）"
+
+document.getElementById("interest").innerText="研究兴趣：数量金融、金融数据分析、金融市场研究、风险管理、金融科技"
+
+document.getElementById("about_title").innerText="个人简介"
+
+document.getElementById("about").innerText="我目前就读于华东政法大学数量金融专业，对金融市场运行机制和数据分析方法具有浓厚兴趣。在学习过程中系统掌握了金融学、会计学、宏观经济学、统计学、金融市场与财政学等课程内容，并逐步培养了运用统计方法和数据分析工具研究金融问题的能力。我希望未来能够在金融数据分析、量化研究或金融科技方向发展，通过数据分析和定量模型理解金融市场规律，为投资决策与风险管理提供支持。"
+
+document.getElementById("edu_title").innerText="教育经历"
+
+document.getElementById("edu").innerText="华东政法大学 数量金融专业 本科 2024—至今"
+
+document.getElementById("course_title").innerText="核心课程"
+
+document.getElementById("course").innerHTML="<ul><li>金融学</li><li>会计学</li><li>宏观经济学</li><li>统计学</li><li>金融市场</li><li>财政学</li></ul>"
+
+document.getElementById("skill_title").innerText="技能"
+
+document.getElementById("skills").innerHTML="<ul><li>Python（基础数据分析）</li><li>统计分析与数据处理</li><li>金融市场基础分析</li><li>Excel数据处理</li><li>学术写作与研究报告撰写</li></ul>"
+
+document.getElementById("award_title").innerText="荣誉奖励"
+
+document.getElementById("award").innerHTML="<ul><li>华东政法大学 校综合三等奖学金</li></ul>"
+
+document.getElementById("career_title").innerText="职业目标"
+
+document.getElementById("career").innerText="希望未来从事金融数据分析、量化研究或金融科技相关工作，运用统计方法、数据分析与金融理论研究金融市场问题，并为投资决策和风险管理提供支持。"
+
+document.getElementById("contact_title").innerText="联系方式"
+
+document.getElementById("contact").innerText="邮箱：caikx2018@gmail.com"
+
+document.getElementById("update").innerText="最后更新：2026年3月"
+
+}
+
+function en(){
+
+document.getElementById("title").innerText="Personal Homepage"
+
+document.getElementById("name").innerText="Name: Caikexin Cai"
+
+document.getElementById("school").innerText="University: East China University of Political Science and Law"
+
+document.getElementById("major").innerText="Major: Quantitative Finance (Class of 2024)"
+
+document.getElementById("interest").innerText="Research Interests: Quantitative Finance, Financial Data Analysis, Financial Markets, Risk Management, Financial Technology"
+
+document.getElementById("about_title").innerText="About Me"
+
+document.getElementById("about").innerText="I am currently an undergraduate student majoring in Quantitative Finance at East China University of Political Science and Law. My academic interests focus on financial markets and quantitative data analysis. Through coursework such as Finance, Accounting, Macroeconomics, Statistics, Financial Markets, and Public Finance, I have developed a strong interest in applying statistical methods and data analysis to financial research. In the future, I aim to pursue a career in financial data analysis, quantitative research, or financial technology."
+
+document.getElementById("edu_title").innerText="Education"
+
+document.getElementById("edu").innerText="East China University of Political Science and Law — Bachelor in Quantitative Finance — 2024–Present"
+
+document.getElementById("course_title").innerText="Key Courses"
+
+document.getElementById("course").innerHTML="<ul><li>Finance</li><li>Accounting</li><li>Macroeconomics</li><li>Statistics</li><li>Financial Markets</li><li>Public Finance</li></ul>"
+
+document.getElementById("skill_title").innerText="Skills"
+
+document.getElementById("skills").innerHTML="<ul><li>Python (Basic Data Analysis)</li><li>Statistical Analysis</li><li>Financial Market Analysis</li><li>Excel Data Processing</li><li>Academic Writing</li></ul>"
+
+document.getElementById("award_title").innerText="Awards"
+
+document.getElementById("award").innerHTML="<ul><li>University Comprehensive Third-Class Scholarship</li></ul>"
+
+document.getElementById("career_title").innerText="Career Goal"
+
+document.getElementById("career").innerText="I aim to pursue a career in financial data analysis, quantitative research, or financial technology. I hope to apply statistical methods and quantitative models to understand financial markets and support investment decision-making and risk management."
+
+document.getElementById("contact_title").innerText="Contact"
+
+document.getElementById("contact").innerText="Email: caikx2018@gmail.com"
+
+document.getElementById("update").innerText="Last Updated: March 2026"
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="lang">
+<button onclick="cn()">中文</button>
+<button onclick="en()">English</button>
+</div>
+
+<div class="header">
+
+<h1 id="title">个人主页</h1>
+
+<p id="name">姓名：蔡可歆</p>
+
+<p id="school">学校：华东政法大学</p>
+
+<p id="major">专业：数量金融（2024级）</p>
+
+<p id="interest">研究兴趣：数量金融、金融数据分析、金融市场研究、风险管理、金融科技</p>
+
+</div>
+
+<div class="container">
+
+<div class="section">
+<h2 id="about_title">个人简介</h2>
+<p id="about"></p>
+</div>
+
+<div class="section">
+<h2 id="edu_title">教育经历</h2>
+<p id="edu"></p>
+</div>
+
+<div class="section">
+<h2 id="course_title">核心课程</h2>
+<div id="course"></div>
+</div>
+
+<div class="section">
+<h2 id="skill_title">技能</h2>
+<div id="skills"></div>
+</div>
+
+<div class="section">
+<h2 id="award_title">荣誉奖励</h2>
+<div id="award"></div>
+</div>
+
+<div class="section">
+<h2 id="career_title">职业目标</h2>
+<p id="career"></p>
+</div>
+
+<div class="section">
+<h2 id="contact_title">联系方式</h2>
+<p id="contact"></p>
+</div>
+
+<div class="footer">
+<p id="update">最后更新：2026年3月</p>
+</div>
+
+</div>
+
+<script>
+cn();
+</script>
+
+</body>
+</html>
