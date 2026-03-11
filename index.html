@@ -1,212 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personal Research Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kexin Cai | 蔡可歆 - Personal Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* 深蓝灰色，专业且稳重 */
+            --accent-color: #3498db;  /* 亮蓝色，用于点缀 */
+            --bg-color: #f9fbfd;
+            --text-color: #333;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Inter', 'Noto Serif SC', serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
 
-body{
-    font-family: "Inter", system-ui, sans-serif;
-    margin:0;
-    background:linear-gradient(135deg,#eef2ff,#f8fafc);
-    color:#333;
-}
+        /* 语言切换按钮 */
+        #lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            cursor: pointer;
+            border: 1px solid var(--accent-color);
+            background: transparent;
+            color: var(--accent-color);
+            border-radius: 20px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
-}
+        #lang-switch:hover {
+            background: var(--accent-color);
+            color: white;
+        }
 
-.header{
-    text-align:center;
-    margin-bottom:50px;
-}
+        header {
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
 
-.header h1{
-    font-weight:600;
-    font-size:38px;
-    letter-spacing:1px;
-}
+        h1 { color: var(--primary-color); margin-bottom: 5px; }
+        h2 { color: var(--accent-color); border-left: 4px solid var(--accent-color); padding-left: 15px; margin-top: 40px; }
 
-.header p{
-    color:#666;
-    font-size:16px;
-}
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 0.95em;
+        }
 
-.card{
-    background:white;
-    padding:30px;
-    margin-bottom:25px;
-    border-radius:14px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.05);
-}
+        .skill-tag {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 4px 12px;
+            margin: 4px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
 
-h2{
-    font-weight:500;
-    margin-bottom:15px;
-}
+        .update-date {
+            margin-top: 50px;
+            font-size: 0.85em;
+            color: #888;
+            text-align: center;
+        }
 
-ul{
-    padding-left:18px;
-}
-
-.tag{
-    display:inline-block;
-    background:#eef2ff;
-    padding:6px 12px;
-    border-radius:20px;
-    margin:4px;
-    font-size:13px;
-}
-
-.footer{
-    text-align:center;
-    margin-top:40px;
-    color:#888;
-    font-size:14px;
-}
-
-.graph{
-    margin-top:20px;
-}
-
-</style>
+        /* 隐藏不同语言内容的逻辑 */
+        [lang="en"] { display: none; }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <button id="lang-switch" onclick="toggleLanguage()">English / 中文</button>
 
-<div class="header">
+    <div class="container">
+        <header>
+            <h1 class="lang-zh">蔡可歆</h1>
+            <h1 class="lang-en" lang="en">Kexin Cai</h1>
+            <div class="info-grid">
+                <div>
+                    <strong>📍 <span class="lang-zh">院校：</span><span class="lang-en" lang="en">Univ: </span></strong>
+                    <span class="lang-zh">华东政法大学 (2024级)</span>
+                    <span class="lang-en" lang="en">East China University of Political Science and Law (Class of 2024)</span>
+                </div>
+                <div>
+                    <strong>📧 <span class="lang-zh">邮箱：</span><span class="lang-en" lang="en">Email: </span></strong>
+                    caikx2018@outlook.com
+                </div>
+                <div>
+                    <strong>🎓 <span class="lang-zh">专业：</span><span class="lang-en" lang="en">Major: </span></strong>
+                    <span class="lang-zh">数量金融</span>
+                    <span class="lang-en" lang="en">Quantitative Finance</span>
+                </div>
+                <div>
+                    <strong>🔍 <span class="lang-zh">方向：</span><span class="lang-en" lang="en">Interest: </span></strong>
+                    FinTech (金融科技)
+                </div>
+            </div>
+        </header>
 
-<h1>Your Name</h1>
+        <section>
+            <h2 class="lang-zh">个人简介</h2>
+            <h2 class="lang-en" lang="en">About Me</h2>
+            <p class="lang-zh">
+                您好！我是蔡可歆，目前就读于华东政法大学数量金融专业。我立志于探索科技与金融的交汇点，希望通过量化分析与技术手段解决金融领域的实际问题。在学习中，我保持严谨谦逊的态度，注重理论基础与实践技能的结合。
+            </p>
+            <p class="lang-en" lang="en">
+                Hello! I am Kexin Cai, a student majoring in Quantitative Finance at ECUPL. I am passionate about exploring the intersection of technology and finance, aiming to solve real-world financial problems through quantitative analysis. I maintain a rigorous and humble attitude toward my academic pursuits.
+            </p>
+        </section>
 
-<p>
-Student · Technology Enthusiast · Future FinTech Researcher
-</p>
+        <section>
+            <h2 class="lang-zh">教育经历与荣誉</h2>
+            <h2 class="lang-en" lang="en">Education & Honors</h2>
+            <ul>
+                <li class="lang-zh"><strong>校综合奖学金三等奖</strong> - 展现了稳健的学术表现</li>
+                <li class="lang-en" lang="en"><strong>Third-class Comprehensive Scholarship</strong> - Recognition of academic excellence.</li>
+                <li class="lang-zh"><strong>主修课程：</strong> 统计学、微观/宏观经济学、金融市场、会计学、财政学等。</li>
+                <li class="lang-en" lang="en"><strong>Core Courses:</strong> Statistics, Micro/Macroeconomics, Financial Markets, Accounting, Public Finance, etc.</li>
+            </ul>
+        </section>
 
-</div>
+        <section>
+            <h2 class="lang-zh">技能储备</h2>
+            <h2 class="lang-en" lang="en">Skills</h2>
+            <div>
+                <span class="skill-tag">Python (Data Analysis)</span>
+                <span class="skill-tag">Stata / R</span>
+                <span class="skill-tag">Statistical Modeling</span>
+                <span class="skill-tag">Financial Writing</span>
+                <span class="skill-tag">English (Fluent)</span>
+            </div>
+        </section>
 
+        <div class="update-date">
+            <span class="lang-zh">最后更新日期：2024年10月</span>
+            <span class="lang-en" lang="en">Last Updated: October 2024</span>
+        </div>
+    </div>
 
-<div class="card">
-
-<h2>About Me</h2>
-
-<p>
-I am a student with a growing interest in the intersection between 
-technology, finance, and data-driven systems. My current focus is on 
-building a solid foundation in programming, quantitative thinking, 
-and digital infrastructure.
-</p>
-
-<p>
-In the future, I hope to explore research topics in the field of 
-financial technology (FinTech), particularly the application of 
-software engineering, data analysis, and algorithmic models in modern 
-financial systems.
-</p>
-
-<p>
-This page serves as a simple record of my learning journey and small 
-projects. I am continuously learning and remain open to new ideas, 
-collaborations, and constructive feedback.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h2>Research Interests</h2>
-
-<span class="tag">Financial Technology</span>
-<span class="tag">Digital Finance</span>
-<span class="tag">Data Analysis</span>
-<span class="tag">Algorithmic Systems</span>
-<span class="tag">Blockchain & Infrastructure</span>
-
-</div>
-
-
-<div class="card">
-
-<h2>Projects</h2>
-
-<ul>
-<li>
-Exploring basic financial data analysis using Python and open datasets.
-</li>
-
-<li>
-Simple experiments with algorithmic trading logic and data visualization.
-</li>
-
-<li>
-Learning about distributed systems and their applications in financial infrastructure.
-</li>
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h2>Learning Focus</h2>
-
-<ul>
-<li>Programming: Python / JavaScript</li>
-<li>Data Analysis & Visualization</li>
-<li>Financial Market Fundamentals</li>
-<li>Quantitative Methods</li>
-</ul>
-
-<div class="graph">
-
-<svg width="100%" height="120" viewBox="0 0 400 120">
-
-<polyline
-fill="none"
-stroke="#6366f1"
-stroke-width="3"
-points="0,100 60,90 120,80 180,60 240,50 300,40 360,20"
-/>
-
-</svg>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>Contact</h2>
-
-<p>
-GitHub: https://github.com/yourusername
-</p>
-
-<p>
-Email: your_email@example.com
-</p>
-
-</div>
-
-
-<div class="footer">
-
-<p>
-Learning step by step · Exploring technology and finance
-</p>
-
-</div>
-
-</div>
-
+    <script>
+        function toggleLanguage() {
+            const zhElements = document.querySelectorAll('.lang-zh');
+            const enElements = document.querySelectorAll('[lang="en"]');
+            
+            if (zhElements[0].style.display === 'none') {
+                zhElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+            } else {
+                zhElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+            }
+        }
+    </script>
 </body>
 </html>
