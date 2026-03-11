@@ -1,175 +1,284 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kexin Cai | 蔡可歆 - Personal Homepage</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2c3e50; /* 深蓝灰色，专业且稳重 */
-            --accent-color: #3498db;  /* 亮蓝色，用于点缀 */
-            --bg-color: #f9fbfd;
-            --text-color: #333;
-        }
 
-        body {
-            font-family: 'Inter', 'Noto Serif SC', serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .container {
-            max-width: 850px;
-            margin: 50px auto;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-radius: 8px;
-        }
+<title>Personal Homepage</title>
 
-        /* 语言切换按钮 */
-        #lang-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 8px 16px;
-            cursor: pointer;
-            border: 1px solid var(--accent-color);
-            background: transparent;
-            color: var(--accent-color);
-            border-radius: 20px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+<style>
 
-        #lang-switch:hover {
-            background: var(--accent-color);
-            color: white;
-        }
+body{
+font-family:"Segoe UI",Arial;
+background:#f4f6fb;
+margin:0;
+}
 
-        header {
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
+.container{
+max-width:900px;
+margin:auto;
+padding:40px;
+}
 
-        h1 { color: var(--primary-color); margin-bottom: 5px; }
-        h2 { color: var(--accent-color); border-left: 4px solid var(--accent-color); padding-left: 15px; margin-top: 40px; }
+.header{
+text-align:center;
+margin-bottom:30px;
+}
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            font-size: 0.95em;
-        }
+h1{
+font-weight:600;
+}
 
-        .skill-tag {
-            display: inline-block;
-            background: #eef2f7;
-            padding: 4px 12px;
-            margin: 4px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
+.lang-btn{
+background:#3f6df6;
+color:white;
+border:none;
+padding:8px 15px;
+margin:5px;
+border-radius:5px;
+cursor:pointer;
+}
 
-        .update-date {
-            margin-top: 50px;
-            font-size: 0.85em;
-            color: #888;
-            text-align: center;
-        }
+.card{
+background:white;
+padding:25px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
 
-        /* 隐藏不同语言内容的逻辑 */
-        [lang="en"] { display: none; }
-    </style>
+h2{
+color:#2c3e50;
+border-left:4px solid #3f6df6;
+padding-left:10px;
+}
+
+.footer{
+text-align:center;
+color:#777;
+margin-top:30px;
+}
+
+</style>
+
+
+<script>
+
+function switchLang(lang){
+
+if(lang==="en"){
+
+document.getElementById("title").innerText="Personal Homepage";
+
+document.getElementById("basic").innerHTML=
+"<b>Name:</b> Caikexin<br><b>University:</b> East China University of Political Science and Law<br><b>Major:</b> Quantitative Finance (Class of 2024)<br><b>Research Interest:</b> Financial Technology (FinTech)<br><b>Email:</b> caikx2018@outlook.com";
+
+document.getElementById("intro").innerText=
+"I am currently an undergraduate student majoring in Quantitative Finance at East China University of Political Science and Law. My academic interests lie mainly in financial technology (FinTech), quantitative finance, and the application of data analysis in modern financial systems. Through systematic training in economics, finance, and statistics, I hope to gradually develop a solid analytical foundation and explore how emerging technologies can reshape financial markets and financial services.";
+
+document.getElementById("research").innerText=
+"My current research interests include financial technology, digital finance, financial data analysis, and the application of quantitative methods in financial markets. In the future, I hope to further explore topics such as data-driven financial analysis, algorithmic finance, and the integration of technology and financial infrastructure.";
+
+document.getElementById("skills").innerHTML=
+"<li>Python programming (basic data analysis)</li><li>Statistical and quantitative analysis</li><li>Economic and financial research writing</li><li>Financial data interpretation</li>";
+
+document.getElementById("education").innerHTML=
+"East China University of Political Science and Law<br>Major: Quantitative Finance (2024–Present)";
+
+document.getElementById("courses").innerHTML=
+"Statistics, Public Finance, Microeconomics, Macroeconomics, Financial Markets, Accounting";
+
+document.getElementById("award").innerText=
+"Third Prize, Comprehensive Scholarship of East China University of Political Science and Law";
+
+document.getElementById("plan").innerText=
+"In the future, I hope to continue developing interdisciplinary knowledge at the intersection of finance and technology. I am particularly interested in exploring how data science, financial modeling, and digital financial infrastructure can contribute to innovation in modern financial systems.";
+
+document.getElementById("update").innerText=
+"Last updated: March 2026";
+
+}
+
+else{
+
+document.getElementById("title").innerText="个人主页";
+
+document.getElementById("basic").innerHTML=
+"<b>姓名：</b>蔡可歆<br><b>学校：</b>华东政法大学<br><b>专业：</b>数量金融（2024级）<br><b>研究方向：</b>金融科技 FinTech<br><b>邮箱：</b>caikx2018@outlook.com";
+
+document.getElementById("intro").innerText=
+"我目前就读于华东政法大学数量金融专业。我的学习兴趣主要集中在金融科技（FinTech）、数据分析以及量化方法在现代金融体系中的应用。通过系统学习经济学、金融学与统计学等基础课程，我希望逐步建立扎实的理论基础，并进一步探索金融与新兴技术结合所带来的创新发展。";
+
+document.getElementById("research").innerText=
+"目前我主要关注金融科技、数字金融、金融数据分析以及量化方法在金融市场中的应用。未来希望能够进一步深入研究数据驱动的金融分析、金融科技创新以及技术在金融基础设施中的应用。";
+
+document.getElementById("skills").innerHTML=
+"<li>Python基础编程</li><li>数据分析</li><li>统计分析</li><li>经济金融研究与学术写作</li>";
+
+document.getElementById("education").innerHTML=
+"华东政法大学<br>数量金融专业（2024级）";
+
+document.getElementById("courses").innerHTML=
+"统计学、财政学、微观经济学、宏观经济学、金融市场、会计学";
+
+document.getElementById("award").innerText=
+"华东政法大学综合奖学金三等奖";
+
+document.getElementById("plan").innerText=
+"未来我希望继续在金融与技术交叉领域进行学习与探索，重点关注金融科技的发展以及数据分析、金融建模等方法在金融实践中的应用，并逐步提升自己的研究能力。";
+
+document.getElementById("update").innerText=
+"最后更新：2026年3月";
+
+}
+
+}
+
+</script>
+
 </head>
+
+
 <body>
 
-    <button id="lang-switch" onclick="toggleLanguage()">English / 中文</button>
+<div class="container">
 
-    <div class="container">
-        <header>
-            <h1 class="lang-zh">蔡可歆</h1>
-            <h1 class="lang-en" lang="en">Kexin Cai</h1>
-            <div class="info-grid">
-                <div>
-                    <strong>📍 <span class="lang-zh">院校：</span><span class="lang-en" lang="en">Univ: </span></strong>
-                    <span class="lang-zh">华东政法大学 (2024级)</span>
-                    <span class="lang-en" lang="en">East China University of Political Science and Law (Class of 2024)</span>
-                </div>
-                <div>
-                    <strong>📧 <span class="lang-zh">邮箱：</span><span class="lang-en" lang="en">Email: </span></strong>
-                    caikx2018@outlook.com
-                </div>
-                <div>
-                    <strong>🎓 <span class="lang-zh">专业：</span><span class="lang-en" lang="en">Major: </span></strong>
-                    <span class="lang-zh">数量金融</span>
-                    <span class="lang-en" lang="en">Quantitative Finance</span>
-                </div>
-                <div>
-                    <strong>🔍 <span class="lang-zh">方向：</span><span class="lang-en" lang="en">Interest: </span></strong>
-                    FinTech (金融科技)
-                </div>
-            </div>
-        </header>
+<div class="header">
 
-        <section>
-            <h2 class="lang-zh">个人简介</h2>
-            <h2 class="lang-en" lang="en">About Me</h2>
-            <p class="lang-zh">
-                您好！我是蔡可歆，目前就读于华东政法大学数量金融专业。我立志于探索科技与金融的交汇点，希望通过量化分析与技术手段解决金融领域的实际问题。在学习中，我保持严谨谦逊的态度，注重理论基础与实践技能的结合。
-            </p>
-            <p class="lang-en" lang="en">
-                Hello! I am Kexin Cai, a student majoring in Quantitative Finance at ECUPL. I am passionate about exploring the intersection of technology and finance, aiming to solve real-world financial problems through quantitative analysis. I maintain a rigorous and humble attitude toward my academic pursuits.
-            </p>
-        </section>
+<h1 id="title">个人主页</h1>
 
-        <section>
-            <h2 class="lang-zh">教育经历与荣誉</h2>
-            <h2 class="lang-en" lang="en">Education & Honors</h2>
-            <ul>
-                <li class="lang-zh"><strong>校综合奖学金三等奖</strong> - 展现了稳健的学术表现</li>
-                <li class="lang-en" lang="en"><strong>Third-class Comprehensive Scholarship</strong> - Recognition of academic excellence.</li>
-                <li class="lang-zh"><strong>主修课程：</strong> 统计学、微观/宏观经济学、金融市场、会计学、财政学等。</li>
-                <li class="lang-en" lang="en"><strong>Core Courses:</strong> Statistics, Micro/Macroeconomics, Financial Markets, Accounting, Public Finance, etc.</li>
-            </ul>
-        </section>
+<button class="lang-btn" onclick="switchLang('zh')">中文</button>
+<button class="lang-btn" onclick="switchLang('en')">English</button>
 
-        <section>
-            <h2 class="lang-zh">技能储备</h2>
-            <h2 class="lang-en" lang="en">Skills</h2>
-            <div>
-                <span class="skill-tag">Python (Data Analysis)</span>
-                <span class="skill-tag">Stata / R</span>
-                <span class="skill-tag">Statistical Modeling</span>
-                <span class="skill-tag">Financial Writing</span>
-                <span class="skill-tag">English (Fluent)</span>
-            </div>
-        </section>
+</div>
 
-        <div class="update-date">
-            <span class="lang-zh">最后更新日期：2024年10月</span>
-            <span class="lang-en" lang="en">Last Updated: October 2024</span>
-        </div>
-    </div>
 
-    <script>
-        function toggleLanguage() {
-            const zhElements = document.querySelectorAll('.lang-zh');
-            const enElements = document.querySelectorAll('[lang="en"]');
-            
-            if (zhElements[0].style.display === 'none') {
-                zhElements.forEach(el => el.style.display = 'block');
-                enElements.forEach(el => el.style.display = 'none');
-            } else {
-                zhElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
-            }
-        }
-    </script>
+<div class="card">
+
+<h2>基本信息 / Basic Information</h2>
+
+<p id="basic">
+
+<b>姓名：</b>蔡可歆<br>
+<b>学校：</b>华东政法大学<br>
+<b>专业：</b>数量金融（2024级）<br>
+<b>研究方向：</b>金融科技 FinTech<br>
+<b>邮箱：</b>caikx2018@outlook.com
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>个人简介 / Personal Introduction</h2>
+
+<p id="intro">
+
+我目前就读于华东政法大学数量金融专业。我的学习兴趣主要集中在金融科技（FinTech）、数据分析以及量化方法在现代金融体系中的应用。通过系统学习经济学、金融学与统计学等基础课程，我希望逐步建立扎实的理论基础，并进一步探索金融与新兴技术结合所带来的创新发展。
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>研究兴趣 / Research Interests</h2>
+
+<p id="research">
+
+目前我主要关注金融科技、数字金融、金融数据分析以及量化方法在金融市场中的应用。未来希望能够进一步深入研究数据驱动的金融分析、金融科技创新以及技术在金融基础设施中的应用。
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>技能 / Skills</h2>
+
+<ul id="skills">
+
+<li>Python基础编程</li>
+<li>数据分析</li>
+<li>统计分析</li>
+<li>经济金融研究与学术写作</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2>教育经历 / Education</h2>
+
+<p id="education">
+
+华东政法大学<br>
+数量金融专业（2024级）
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>课程经历 / Coursework</h2>
+
+<p id="courses">
+
+统计学、财政学、微观经济学、宏观经济学、金融市场、会计学
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>荣誉奖项 / Awards</h2>
+
+<p id="award">
+
+华东政法大学综合奖学金三等奖
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>未来研究计划 / Future Academic Interests</h2>
+
+<p id="plan">
+
+未来我希望继续在金融与技术交叉领域进行学习与探索，重点关注金融科技的发展以及数据分析、金融建模等方法在金融实践中的应用，并逐步提升自己的研究能力。
+
+</p>
+
+</div>
+
+
+<div class="footer">
+
+<p id="update">
+
+最后更新：2026年3月
+
+</p>
+
+</div>
+
+</div>
+
 </body>
+
 </html>
