@@ -1,236 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<title>Caikexin Cai | Personal Homepage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Research Page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-font-family: Arial, Helvetica, sans-serif;
-background:#f5f7fa;
-margin:0;
-padding:0;
-}
-
-.header{
-background:#1f3c88;
-color:white;
-text-align:center;
-padding:40px;
+    font-family: "Inter", system-ui, sans-serif;
+    margin:0;
+    background:linear-gradient(135deg,#eef2ff,#f8fafc);
+    color:#333;
 }
 
 .container{
-max-width:900px;
-margin:auto;
-background:white;
-padding:35px;
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
 }
 
-.section{
-margin-top:45px;
+.header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.header h1{
+    font-weight:600;
+    font-size:38px;
+    letter-spacing:1px;
+}
+
+.header p{
+    color:#666;
+    font-size:16px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:14px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
 }
 
 h2{
-border-bottom:2px solid #eee;
-padding-bottom:8px;
-}
-
-.lang{
-position:fixed;
-top:20px;
-right:20px;
-}
-
-button{
-padding:8px 14px;
-margin-left:5px;
-border:none;
-background:#3498db;
-color:white;
-border-radius:6px;
-cursor:pointer;
-}
-
-button:hover{
-background:#2980b9;
-}
-
-.footer{
-margin-top:40px;
-color:gray;
-font-size:14px;
+    font-weight:500;
+    margin-bottom:15px;
 }
 
 ul{
-line-height:1.8;
+    padding-left:18px;
+}
+
+.tag{
+    display:inline-block;
+    background:#eef2ff;
+    padding:6px 12px;
+    border-radius:20px;
+    margin:4px;
+    font-size:13px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:40px;
+    color:#888;
+    font-size:14px;
+}
+
+.graph{
+    margin-top:20px;
 }
 
 </style>
-
-<script>
-
-function cn(){
-
-document.getElementById("title").innerText="个人主页"
-
-document.getElementById("name").innerText="姓名：蔡可歆"
-
-document.getElementById("school").innerText="学校：华东政法大学"
-
-document.getElementById("major").innerText="专业：数量金融（2024级）"
-
-document.getElementById("interest").innerText="研究兴趣：数量金融、金融数据分析、金融市场研究、风险管理、金融科技"
-
-document.getElementById("about_title").innerText="个人简介"
-
-document.getElementById("about").innerText="我目前就读于华东政法大学数量金融专业，对金融市场运行机制和数据分析方法具有浓厚兴趣。在学习过程中系统掌握了金融学、会计学、宏观经济学、统计学、金融市场与财政学等课程内容，并逐步培养了运用统计方法和数据分析工具研究金融问题的能力。我希望未来能够在金融数据分析、量化研究或金融科技方向发展，通过数据分析和定量模型理解金融市场规律，为投资决策与风险管理提供支持。"
-
-document.getElementById("edu_title").innerText="教育经历"
-
-document.getElementById("edu").innerText="华东政法大学 数量金融专业 本科 2024—至今"
-
-document.getElementById("course_title").innerText="核心课程"
-
-document.getElementById("course").innerHTML="<ul><li>金融学</li><li>会计学</li><li>宏观经济学</li><li>统计学</li><li>金融市场</li><li>财政学</li></ul>"
-
-document.getElementById("skill_title").innerText="技能"
-
-document.getElementById("skills").innerHTML="<ul><li>Python（基础数据分析）</li><li>统计分析与数据处理</li><li>金融市场基础分析</li><li>Excel数据处理</li><li>学术写作与研究报告撰写</li></ul>"
-
-document.getElementById("award_title").innerText="荣誉奖励"
-
-document.getElementById("award").innerHTML="<ul><li>华东政法大学 校综合三等奖学金</li></ul>"
-
-document.getElementById("career_title").innerText="职业目标"
-
-document.getElementById("career").innerText="希望未来从事金融数据分析、量化研究或金融科技相关工作，运用统计方法、数据分析与金融理论研究金融市场问题，并为投资决策和风险管理提供支持。"
-
-document.getElementById("contact_title").innerText="联系方式"
-
-document.getElementById("contact").innerText="邮箱：caikx2018@gmail.com"
-
-document.getElementById("update").innerText="最后更新：2026年3月"
-
-}
-
-function en(){
-
-document.getElementById("title").innerText="Personal Homepage"
-
-document.getElementById("name").innerText="Name: Caikexin Cai"
-
-document.getElementById("school").innerText="University: East China University of Political Science and Law"
-
-document.getElementById("major").innerText="Major: Quantitative Finance (Class of 2024)"
-
-document.getElementById("interest").innerText="Research Interests: Quantitative Finance, Financial Data Analysis, Financial Markets, Risk Management, Financial Technology"
-
-document.getElementById("about_title").innerText="About Me"
-
-document.getElementById("about").innerText="I am currently an undergraduate student majoring in Quantitative Finance at East China University of Political Science and Law. My academic interests focus on financial markets and quantitative data analysis. Through coursework such as Finance, Accounting, Macroeconomics, Statistics, Financial Markets, and Public Finance, I have developed a strong interest in applying statistical methods and data analysis to financial research. In the future, I aim to pursue a career in financial data analysis, quantitative research, or financial technology."
-
-document.getElementById("edu_title").innerText="Education"
-
-document.getElementById("edu").innerText="East China University of Political Science and Law — Bachelor in Quantitative Finance — 2024–Present"
-
-document.getElementById("course_title").innerText="Key Courses"
-
-document.getElementById("course").innerHTML="<ul><li>Finance</li><li>Accounting</li><li>Macroeconomics</li><li>Statistics</li><li>Financial Markets</li><li>Public Finance</li></ul>"
-
-document.getElementById("skill_title").innerText="Skills"
-
-document.getElementById("skills").innerHTML="<ul><li>Python (Basic Data Analysis)</li><li>Statistical Analysis</li><li>Financial Market Analysis</li><li>Excel Data Processing</li><li>Academic Writing</li></ul>"
-
-document.getElementById("award_title").innerText="Awards"
-
-document.getElementById("award").innerHTML="<ul><li>University Comprehensive Third-Class Scholarship</li></ul>"
-
-document.getElementById("career_title").innerText="Career Goal"
-
-document.getElementById("career").innerText="I aim to pursue a career in financial data analysis, quantitative research, or financial technology. I hope to apply statistical methods and quantitative models to understand financial markets and support investment decision-making and risk management."
-
-document.getElementById("contact_title").innerText="Contact"
-
-document.getElementById("contact").innerText="Email: caikx2018@gmail.com"
-
-document.getElementById("update").innerText="Last Updated: March 2026"
-
-}
-
-</script>
-
 </head>
 
 <body>
 
-<div class="lang">
-<button onclick="cn()">中文</button>
-<button onclick="en()">English</button>
-</div>
+<div class="container">
 
 <div class="header">
 
-<h1 id="title">个人主页</h1>
+<h1>Your Name</h1>
 
-<p id="name">姓名：蔡可歆</p>
-
-<p id="school">学校：华东政法大学</p>
-
-<p id="major">专业：数量金融（2024级）</p>
-
-<p id="interest">研究兴趣：数量金融、金融数据分析、金融市场研究、风险管理、金融科技</p>
+<p>
+Student · Technology Enthusiast · Future FinTech Researcher
+</p>
 
 </div>
 
-<div class="container">
 
-<div class="section">
-<h2 id="about_title">个人简介</h2>
-<p id="about"></p>
+<div class="card">
+
+<h2>About Me</h2>
+
+<p>
+I am a student with a growing interest in the intersection between 
+technology, finance, and data-driven systems. My current focus is on 
+building a solid foundation in programming, quantitative thinking, 
+and digital infrastructure.
+</p>
+
+<p>
+In the future, I hope to explore research topics in the field of 
+financial technology (FinTech), particularly the application of 
+software engineering, data analysis, and algorithmic models in modern 
+financial systems.
+</p>
+
+<p>
+This page serves as a simple record of my learning journey and small 
+projects. I am continuously learning and remain open to new ideas, 
+collaborations, and constructive feedback.
+</p>
+
 </div>
 
-<div class="section">
-<h2 id="edu_title">教育经历</h2>
-<p id="edu"></p>
+
+<div class="card">
+
+<h2>Research Interests</h2>
+
+<span class="tag">Financial Technology</span>
+<span class="tag">Digital Finance</span>
+<span class="tag">Data Analysis</span>
+<span class="tag">Algorithmic Systems</span>
+<span class="tag">Blockchain & Infrastructure</span>
+
 </div>
 
-<div class="section">
-<h2 id="course_title">核心课程</h2>
-<div id="course"></div>
+
+<div class="card">
+
+<h2>Projects</h2>
+
+<ul>
+<li>
+Exploring basic financial data analysis using Python and open datasets.
+</li>
+
+<li>
+Simple experiments with algorithmic trading logic and data visualization.
+</li>
+
+<li>
+Learning about distributed systems and their applications in financial infrastructure.
+</li>
+</ul>
+
 </div>
 
-<div class="section">
-<h2 id="skill_title">技能</h2>
-<div id="skills"></div>
+
+<div class="card">
+
+<h2>Learning Focus</h2>
+
+<ul>
+<li>Programming: Python / JavaScript</li>
+<li>Data Analysis & Visualization</li>
+<li>Financial Market Fundamentals</li>
+<li>Quantitative Methods</li>
+</ul>
+
+<div class="graph">
+
+<svg width="100%" height="120" viewBox="0 0 400 120">
+
+<polyline
+fill="none"
+stroke="#6366f1"
+stroke-width="3"
+points="0,100 60,90 120,80 180,60 240,50 300,40 360,20"
+/>
+
+</svg>
+
 </div>
 
-<div class="section">
-<h2 id="award_title">荣誉奖励</h2>
-<div id="award"></div>
 </div>
 
-<div class="section">
-<h2 id="career_title">职业目标</h2>
-<p id="career"></p>
+
+<div class="card">
+
+<h2>Contact</h2>
+
+<p>
+GitHub: https://github.com/yourusername
+</p>
+
+<p>
+Email: your_email@example.com
+</p>
+
 </div>
 
-<div class="section">
-<h2 id="contact_title">联系方式</h2>
-<p id="contact"></p>
-</div>
 
 <div class="footer">
-<p id="update">最后更新：2026年3月</p>
-</div>
+
+<p>
+Learning step by step · Exploring technology and finance
+</p>
 
 </div>
 
-<script>
-cn();
-</script>
+</div>
 
 </body>
 </html>
