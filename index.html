@@ -8,8 +8,8 @@
 
     <style>
         :root {
-            --primary-color: #1a2a6c; /* 深邃金融蓝 */
-            --accent-color: #3f6df6;  /* 科技亮蓝 */
+            --primary-color: #1a2a6c; 
+            --accent-color: #3f6df6;  
             --text-main: #2c3e50;
             --bg-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
             --card-bg: rgba(255, 255, 255, 0.85);
@@ -31,40 +31,49 @@
             padding: 40px 20px;
         }
 
-        /* 顶部装饰条 */
-        .top-quote {
+        /* 顶部硬核宣言 */
+        .top-banner {
             text-align: center;
-            font-style: italic;
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+            padding: 15px;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            border-radius: 4px;
         }
 
         /* 页眉样式 */
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 40px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 50px;
         }
 
         h1 {
             font-weight: 800;
             font-size: 2.8rem;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             letter-spacing: -1px;
         }
 
         .motto {
             font-size: 1.1rem;
             color: var(--accent-color);
-            font-weight: 500;
-            margin-bottom: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
-        /* 按钮美化 */
+        .shameless-box {
+            font-style: italic;
+            color: #5d6d7e;
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            line-height: 1.5;
+        }
+
         .lang-btn {
             background: transparent;
             color: var(--primary-color);
@@ -73,7 +82,7 @@
             margin: 0 8px;
             border-radius: 20px;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -81,30 +90,27 @@
         .lang-btn:hover {
             background: var(--primary-color);
             color: white;
-            box-shadow: 0 4px 12px rgba(26, 42, 108, 0.2);
         }
 
-        /* 卡片升级 */
+        /* 卡片样式 */
         .card {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             padding: 35px;
             margin-bottom: 30px;
             border-radius: 20px;
             box-shadow: var(--card-shadow);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: all 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(31, 38, 135, 0.15);
+            transform: translateY(-5px);
         }
 
         h2 {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-top: 0;
             margin-bottom: 20px;
             display: flex;
@@ -115,20 +121,17 @@
             content: "";
             display: inline-block;
             width: 6px;
-            height: 24px;
+            height: 22px;
             background: var(--accent-color);
             margin-right: 12px;
             border-radius: 3px;
         }
 
-        /* 内容文本强化 */
         p b {
             color: var(--primary-color);
-            font-weight: 700;
-            background: linear-gradient(transparent 70%, #eef2ff 70%); /* 重点加粗并带淡色底纹 */
+            background: linear-gradient(transparent 70%, #eef2ff 70%);
         }
 
-        /* 技能标签 */
         #skills {
             display: flex;
             flex-wrap: wrap;
@@ -147,29 +150,43 @@
             border: 1px solid #dbe4ff;
         }
 
-        /* 教育与课程专属样式 */
-        .edu-item {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 5px;
+        /* 白日梦想家高亮卡片 */
+        .mitty-card {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            font-family: "Georgia", serif;
+            box-shadow: 0 10px 30px rgba(26, 42, 108, 0.3);
         }
 
-        /* 页脚 */
+        .mitty-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .mitty-author {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+
         .footer {
             text-align: center;
             color: #95a5a6;
             margin-top: 60px;
-            font-size: 0.85rem;
             padding-bottom: 40px;
         }
 
-        .quote-box {
-            margin-top: 20px;
-            padding: 20px;
-            border-top: 1px dashed #ccc;
+        .final-quote {
             font-style: italic;
-            color: #7f8c8d;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
         }
 
     </style>
@@ -178,28 +195,12 @@
         function switchLang(lang) {
             if (lang === "en") {
                 document.getElementById("title").innerText = "Caikexin's Portfolio";
-                document.getElementById("motto").innerText = "Carpe Diem | Seize the Day";
+                document.getElementById("carpe").innerText = "Carpe Diem";
                 document.getElementById("basic").innerHTML =
-                    "<b>Name:</b> Caikexin<br><b>University:</b> East China University of Political Science and Law<br><b>Major:</b> <b>Quantitative Finance</b> (Class of 2024)<br><b>Research Interest:</b> <b>Financial Technology (FinTech)</b><br><b>Email:</b> caikx2018@outlook.com";
-                document.getElementById("intro").innerText =
-                    "I am currently an undergraduate student majoring in Quantitative Finance at ECUPL. My academic interests lie mainly in financial technology (FinTech), quantitative finance, and the application of data analysis in modern financial systems. I aim to build a solid analytical foundation and explore how emerging technologies reshape financial services.";
-                document.getElementById("research").innerText =
-                    "My current research interests include financial technology, digital finance, financial data analysis, and the application of quantitative methods in financial markets. I am driven to explore data-driven financial analysis and algorithmic finance.";
-                document.getElementById("skills").innerHTML =
-                    "<li>IELTS</li><li>Python Programming</li><li>Data Analysis</li><li>Statistical Analysis</li><li>Academic Writing</li><li>Financial Modeling</li>";
-                document.getElementById("education").innerHTML =
-                    "<div class='edu-item'>East China University of Political Science and Law</div>Major: Quantitative Finance (2024–Present)";
-                document.getElementById("courses").innerHTML =
-                    "<b>Statistics</b>, Public Finance, <b>Microeconomics</b>, <b>Macroeconomics</b>, Financial Markets, Accounting";
-                document.getElementById("award").innerHTML =
-                    "<b>Third Prize</b>, Comprehensive Scholarship of ECUPL";
-                document.getElementById("plan").innerText =
-                    "In the future, I hope to continue developing interdisciplinary knowledge at the intersection of finance and technology, focusing on data science and digital financial infrastructure.";
-                document.getElementById("update").innerText =
-                    "Last updated: March 2026";
+                    "<b>Name:</b> Caikexin<br><b>University:</b> ECUPL<br><b>Major:</b> <b>Quantitative Finance</b> (2024)<br><b>Research:</b> <b>FinTech</b><br><b>Email:</b> caikx2018@outlook.com";
+                document.getElementById("update").innerText = "Last updated: March 2026";
             } else {
-                // 中文版本保持默认或手动填回
-                location.reload(); // 简单处理，或者像上面一样逐个 innerHTML 替换
+                location.reload();
             }
         }
     </script>
@@ -208,17 +209,24 @@
 <body>
 
     <div class="container">
-        <div class="top-quote">"The grass is greener on the other side."</div>
+        <div class="top-banner">There is no luck. There is only work.</div>
 
         <div class="header">
             <h1 id="title">蔡可歆的个人主页</h1>
-            <div class="motto" id="motto">Carpe Diem | 及时行乐，活在当下</div>
+            <div class="motto" id="carpe">Carpe Diem | 及时行乐</div>
+            
+            <div class="shameless-box">
+                "Every day's an opportunity you don't get back, living life to fullest, wouldn't trade a day."
+                <br>
+                <span style="font-size: 0.8rem; opacity: 0.8;">— Shameless (无耻之徒)</span>
+            </div>
+
             <button class="lang-btn" onclick="switchLang('zh')">中文</button>
             <button class="lang-btn" onclick="switchLang('en')">English</button>
         </div>
 
         <div class="card">
-            <h2>基本信息 / Basic Information</h2>
+            <h2>基本信息 / Basic Info</h2>
             <p id="basic">
                 <b>姓名：</b>蔡可歆<br>
                 <b>学校：</b><b>华东政法大学</b><br>
@@ -229,66 +237,36 @@
         </div>
 
         <div class="card">
-            <h2>个人简介 / Personal Introduction</h2>
-            <p id="intro">
-                我目前就读于<b>华东政法大学数量金融专业</b>。我的学习兴趣主要集中在<b>金融科技（FinTech）</b>、数据分析以及量化方法在现代金融体系中的应用。通过系统学习经济学、金融学与统计学等基础课程，我希望逐步建立扎实的理论基础，并进一步探索金融与新兴技术结合所带来的创新发展。
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>研究兴趣 / Research Interests</h2>
-            <p id="research">
-                目前我主要关注<b>金融科技、数字金融、金融数据分析</b>以及<b>量化方法</b>在金融市场中的应用。未来希望能够进一步深入研究数据驱动的金融分析、金融科技创新以及技术在金融基础设施中的应用。
-            </p>
-        </div>
-
-        <div class="card">
             <h2>技能 / Skills</h2>
             <ul id="skills">
                 <li>IELTS</li>
-                <li>Python基础编程</li>
-                <li>数据分析</li>
+                <li>Python数据分析</li>
                 <li>统计分析</li>
-                <li>经济金融研究与学术写作</li>
+                <li>学术写作</li>
                 <li>金融建模</li>
             </ul>
         </div>
 
-        <div class="card">
-            <h2>教育经历 / Education</h2>
-            <div id="education">
-                <div class="edu-item">华东政法大学</div>
-                <b>数量金融专业</b>（2024级 - 至今）
+        <div class="mitty-card">
+            <div class="mitty-text">
+                "To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life."
             </div>
-        </div>
-
-        <div class="card">
-            <h2>课程经历 / Coursework</h2>
-            <p id="courses">
-                <b>统计学</b>、财政学、<b>微观经济学</b>、<b>宏观经济学</b>、金融市场、会计学
-            </p>
-        </div>
-
-        <div class="card">
-            <h2>荣誉奖项 / Awards</h2>
-            <p id="award">
-                🏆 <b>华东政法大学综合奖学金三等奖</b>
-            </p>
+            <div class="mitty-author">— THE SECRET LIFE OF WALTER MITTY (白日梦想家)</div>
         </div>
 
         <div class="card">
             <h2>未来研究计划 / Future Plans</h2>
-            <p id="plan">
-                未来我希望继续在<b>金融与技术交叉领域</b>进行学习与探索，重点关注金融科技的发展以及数据分析、金融建模等方法在金融实践中的应用，并逐步提升自己的研究能力。
+            <p>
+                未来我希望继续在<b>金融与技术交叉领域</b>进行探索，重点关注数据分析与金融建模在实践中的创新应用。
             </p>
-            <div class="quote-box">
-                "It's not who I am underneath, but what I do that defines me."
-            </div>
         </div>
 
         <div class="footer">
+            <div class="final-quote">
+                "It's not who I am underneath, but what I do that defines me."
+            </div>
             <p id="update">最后更新：2026年3月</p>
-            <p style="font-size: 0.7rem; opacity: 0.6;">© 2026 Caikexin. All Rights Reserved.</p>
+            <p style="font-size: 0.7rem; opacity: 0.5;">© 2026 Caikexin. All Rights Reserved.</p>
         </div>
 
     </div>
