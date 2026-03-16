@@ -32,7 +32,7 @@
             padding: 60px 20px;
         }
 
-        /* 顶部硬核宣言 */
+        /* 顶部宣言 */
         .top-banner {
             text-align: center;
             padding: 12px;
@@ -77,6 +77,11 @@
             margin: 0 auto 30px auto;
             border-left: 2px solid #ddd;
             padding-left: 20px;
+            text-align: left;
+        }
+
+        .lang-switch {
+            margin-top: 20px;
         }
 
         .lang-btn {
@@ -92,10 +97,10 @@
             transition: 0.3s;
         }
 
-        .lang-btn:hover {
-            border-color: var(--primary-color);
+        .lang-btn.active {
             background: var(--primary-color);
             color: white;
+            border-color: var(--primary-color);
         }
 
         /* 布局网格 */
@@ -109,7 +114,7 @@
             .grid-layout { grid-template-columns: 1fr; }
         }
 
-        /* 通用卡片升级 */
+        /* 卡片设计 */
         .card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -129,7 +134,6 @@
             display: flex;
             align-items: center;
             letter-spacing: 1px;
-            text-transform: uppercase;
         }
 
         h2::after {
@@ -140,15 +144,12 @@
             margin-left: 20px;
         }
 
-        /* 内容文本 */
-        p { margin: 0 0 15px 0; }
         p b {
             color: var(--primary-color);
-            padding: 0 4px;
+            padding: 0 2px;
             background: linear-gradient(transparent 60%, var(--soft-blue) 40%);
         }
 
-        /* 列表样式 */
         .skill-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -170,27 +171,14 @@
             color: var(--accent-color);
         }
 
-        /* 白日梦想家高亮块 */
+        /* 名言块 */
         .mitty-section {
-            background: #1a2a6c;
             background: linear-gradient(to right, #1a2a6c, #2a4870);
             color: white;
             padding: 60px 40px;
             border-radius: 12px;
             text-align: center;
             margin: 50px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mitty-section::before {
-            content: "“";
-            position: absolute;
-            top: 20px;
-            left: 40px;
-            font-size: 8rem;
-            opacity: 0.1;
-            font-family: serif;
         }
 
         .mitty-text {
@@ -198,14 +186,7 @@
             font-style: italic;
             line-height: 1.8;
             max-width: 800px;
-            margin: 0 auto 20px auto;
-        }
-
-        .mitty-sub {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            opacity: 0.6;
-            text-transform: uppercase;
+            margin: 0 auto 10px auto;
         }
 
         /* 页脚 */
@@ -216,33 +197,12 @@
         }
 
         .batman-quote {
-            font-family: serif;
             font-style: italic;
             font-size: 1.1rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
-
-        .update-tag {
-            font-size: 0.75rem;
-            color: #95a5a6;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
     </style>
-
-    <script>
-        function switchLang(lang) {
-            if (lang === "en") {
-                document.getElementById("title").innerText = "CAIKEXIN";
-                document.getElementById("carpe").innerText = "CARPE DIEM";
-                // 此处可添加更多英文切换逻辑
-            } else {
-                location.reload();
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -251,86 +211,77 @@
         <div class="top-banner">There is no luck. There is only work.</div>
 
         <div class="header">
-            <h1 id="title">蔡可歆</h1>
-            <div class="motto" id="carpe">Carpe Diem</div>
+            <h1 id="name">蔡可歆</h1>
+            <div class="motto">Carpe Diem</div>
             
             <div class="shameless-box">
                 "Every day's an opportunity you don't get back, living life to fullest, wouldn't trade a day."
                 <br>
-                <small style="opacity: 0.6; font-style: normal;">— SHAMELESS (无耻之徒)</small>
+                <small style="opacity: 0.6;">— SHAMELESS</small>
             </div>
 
-            <button class="lang-btn" onclick="switchLang('zh')">ZH</button>
-            <button class="lang-btn" onclick="switchLang('en')">EN</button>
+            <div class="lang-switch">
+                <button class="lang-btn active" id="btn-zh" onclick="switchLang('zh')">中文</button>
+                <button class="lang-btn" id="btn-en" onclick="switchLang('en')">English</button>
+            </div>
         </div>
 
         <div class="grid-layout">
-            
             <div class="card full-width">
-                <h2>个人简介 / PROFILE</h2>
-                <p>
-                    就读于<b>华东政法大学数量金融专业</b>。我是一个致力于探索<b>金融资本</b>与<b>前沿科技</b>交叉领域的学习者。
-                </p>
-                <p>
-                    我不仅关注枯燥的数字模型，更痴迷于数据背后的逻辑与现代金融体系的重塑。通过系统性的经济学训练与统计学工具的应用，我旨在构建一套严谨的量化思维体系，在数字浪潮中捕捉确定的价值。
-                </p>
+                <h2 id="h-profile">个人简介 / PROFILE</h2>
+                <div id="c-profile">
+                    <p>就读于<b>华东政法大学数量金融专业</b>。我是一个致力于探索<b>金融资本</b>与<b>前沿科技</b>交叉领域的学习者。</p>
+                    <p>我通过系统性的经济学训练与统计学工具的应用，旨在构建一套严谨的量化思维体系，在数字浪潮中捕捉确定的价值。</p>
+                </div>
             </div>
 
             <div class="card">
-                <h2>教育经历 / EDUCATION</h2>
-                <p style="margin-bottom: 5px;"><b>华东政法大学</b></p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">数量金融专业 | 本科 | 2024 - 2028 (预计)</p>
-                <p style="font-size: 0.9rem;">主修方向：金融工程基础、数量经济分析。致力于跨学科知识的深度融合。</p>
+                <h2 id="h-edu">教育经历 / EDUCATION</h2>
+                <div id="c-edu">
+                    <p><b>华东政法大学 (ECUPL)</b></p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">数量金融专业 | 本科 | 2024级</p>
+                </div>
             </div>
 
             <div class="card">
-                <h2>荣誉 / ACCOLADES</h2>
-                <p>🏆 <b>校综合奖学金三等奖</b></p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">基于卓越的学业表现与综合素质考评。</p>
-                <p>🏅 <b>学术潜力储备</b></p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">在多项核心专业课程中保持优异绩点。</p>
+                <h2 id="h-award">荣誉奖项 / AWARDS</h2>
+                <div id="c-award">
+                    <p>🏆 <b>综合奖学金三等奖</b></p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">基于学业表现与综合素质考评。</p>
+                </div>
             </div>
 
             <div class="card">
-                <h2>专业技能 / SKILLS</h2>
-                <ul class="skill-list">
+                <h2 id="h-skill">专业技能 / SKILLS</h2>
+                <ul class="skill-list" id="c-skill">
                     <li><b>IELTS</b> 语言能力</li>
-                    <li><b>Python</b> 数据分析与量化基础</li>
-                    <li><b>R / Stata</b> 统计建模潜力</li>
-                    <li><b>Academic Writing</b> 学术研究与写作</li>
-                    <li><b>Financial Modeling</b> 基础金融建模</li>
-                    <li><b>Logic Analysis</b> 严密的逻辑推演</li>
+                    <li><b>Python</b> 数据分析基础</li>
+                    <li><b>Academic Writing</b> 学术写作</li>
+                    <li><b>Financial Modeling</b> 金融建模</li>
                 </ul>
             </div>
 
             <div class="card">
-                <h2>核心课程 / COURSEWORK</h2>
-                <p>
-                    <b>统计学</b>、<b>财政学</b>、<b>微观经济学</b>、<b>宏观经济学</b>、金融市场学、会计学原理、计量经济学基础等。
-                </p>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">
-                    目前专注于构建扎实的经济理论根基，为后续深入研究数字金融基础设施奠定基础。
-                </p>
+                <h2 id="h-course">核心课程 / COURSEWORK</h2>
+                <div id="c-course">
+                    <p><b>统计学</b>、<b>财政学</b>、<b>微观经济学</b>、<b>宏观经济学</b>、金融市场学、会计学原理。</p>
+                </div>
             </div>
-
         </div>
 
         <div class="mitty-section">
             <div class="mitty-text">
                 "To see the world, things dangerous to come to, to see behind walls, to draw closer, to find each other and to feel. That is the purpose of life."
             </div>
-            <div class="mitty-sub">— THE SECRET LIFE OF WALTER MITTY (白日梦想家)</div>
+            <div style="opacity: 0.6; font-size: 0.8rem;">— THE SECRET LIFE OF WALTER MITTY</div>
         </div>
 
         <div class="grid-layout">
-             <div class="card full-width">
-                <h2>研究志向 / RESEARCH INTERESTS</h2>
-                <p>
-                    我目前的核心研究兴趣聚焦于<b>金融科技 (FinTech)</b> 及其对传统金融基础设施的颠覆与重构。我希望探索如何利用<b>大数据分析</b>、<b>分布式账本技术</b>以及<b>机器学习算法</b>来优化风险定价模型，并提高金融服务的普惠性。
-                </p>
-                <p>
-                    未来计划在研究生阶段深耕<b>计算金融</b>或<b>数字金融政策</b>领域，通过实证研究探讨数字货币（CBDC）与去中心化金融（DeFi）的演进路径。
-                </p>
+            <div class="card full-width">
+                <h2 id="h-research">研究志向 / RESEARCH INTERESTS</h2>
+                <div id="c-research">
+                    <p>核心研究兴趣聚焦于<b>金融科技 (FinTech)</b> 及其对传统金融基础设施的重构。希望探索如何利用数据分析优化风险定价模型。</p>
+                </div>
             </div>
         </div>
 
@@ -338,11 +289,72 @@
             <div class="batman-quote">
                 "It's not who I am underneath, but what I do that defines me."
             </div>
-            <div class="update-tag" id="update">Last Updated: March 2026</div>
-            <p style="font-size: 0.65rem; opacity: 0.4; margin-top: 10px;">© 2026 CAIKEXIN. ALL RIGHTS RESERVED.</p>
+            <div id="c-footer" style="font-size: 0.75rem; color: #95a5a6;">
+                Last Updated: March 2026 | © 2026 CAIKEXIN
+            </div>
         </div>
-
     </div>
 
+    <script>
+        const content = {
+            zh: {
+                name: "蔡可歆",
+                h_profile: "个人简介 / PROFILE",
+                c_profile: `<p>就读于<b>华东政法大学数量金融专业</b>。我是一个致力于探索<b>金融资本</b>与<b>前沿科技</b>交叉领域的学习者。</p>
+                            <p>我通过系统性的经济学训练与统计学工具的应用，旨在构建一套严谨的量化思维体系，在数字浪潮中捕捉确定的价值。</p>`,
+                h_edu: "教育经历 / EDUCATION",
+                c_edu: `<p><b>华东政法大学 (ECUPL)</b></p><p style="font-size: 0.9rem; color: var(--text-muted);">数量金融专业 | 本科 | 2024级</p>`,
+                h_award: "荣誉奖项 / AWARDS",
+                c_award: `<p>🏆 <b>综合奖学金三等奖</b></p><p style="font-size: 0.9rem; color: var(--text-muted);">基于学业表现与综合素质考评。</p>`,
+                h_skill: "专业技能 / SKILLS",
+                c_skill: `<li><b>IELTS</b> 语言能力</li><li><b>Python</b> 数据分析基础</li><li><b>Academic Writing</b> 学术写作</li><li><b>Financial Modeling</b> 金融建模</li>`,
+                h_course: "核心课程 / COURSEWORK",
+                c_course: `<p><b>统计学</b>、<b>财政学</b>、<b>微观经济学</b>、<b>宏观经济学</b>、金融市场学、会计学原理。</p>`,
+                h_research: "研究志向 / RESEARCH INTERESTS",
+                c_research: `<p>核心研究兴趣聚焦于<b>金融科技 (FinTech)</b> 及其对传统金融基础设施的重构。希望探索如何利用数据分析优化风险定价模型。</p>`,
+                footer: "最后更新：2026年3月 | © 2026 CAIKEXIN"
+            },
+            en: {
+                name: "Caikexin",
+                h_profile: "PROFILE",
+                c_profile: `<p>Currently a <b>Quantitative Finance</b> student at ECUPL. I am a learner dedicated to exploring the intersection of <b>financial capital</b> and <b>cutting-edge technology</b>.</p>
+                            <p>Through systematic training in economics and statistical tools, I aim to build a rigorous quantitative mindset to capture value in the digital era.</p>`,
+                h_edu: "EDUCATION",
+                c_edu: `<p><b>East China University of Political Science and Law</b></p><p style="font-size: 0.9rem; color: var(--text-muted);">Quantitative Finance | Undergraduate | Class of 2024</p>`,
+                h_award: "AWARDS",
+                c_award: `<p>🏆 <b>Comprehensive Scholarship (3rd Prize)</b></p><p style="font-size: 0.9rem; color: var(--text-muted);">Based on academic excellence and holistic evaluation.</p>`,
+                h_skill: "SKILLS",
+                c_skill: `<li><b>IELTS</b> Proficiency</li><li><b>Python</b> Data Analysis</li><li><b>Academic Writing</b></li><li><b>Financial Modeling</b></li>`,
+                h_course: "COURSEWORK",
+                c_course: `<p><b>Statistics</b>, <b>Public Finance</b>, <b>Microeconomics</b>, <b>Macroeconomics</b>, Financial Markets, Accounting.</p>`,
+                h_research: "RESEARCH INTERESTS",
+                c_research: `<p>My research focuses on <b>FinTech</b> and the restructuring of financial infrastructure. I explore risk pricing models through data-driven approaches.</p>`,
+                footer: "Last Updated: March 2026 | © 2026 CAIKEXIN"
+            }
+        };
+
+        function switchLang(lang) {
+            // 更新文字内容
+            document.getElementById("name").innerText = content[lang].name;
+            document.getElementById("h-profile").innerText = content[lang].h_profile;
+            document.getElementById("c-profile").innerHTML = content[lang].c_profile;
+            document.getElementById("h-edu").innerText = content[lang].h_edu;
+            document.getElementById("c-edu").innerHTML = content[lang].c_edu;
+            document.getElementById("h-award").innerText = content[lang].h_award;
+            document.getElementById("c-award").innerHTML = content[lang].c_award;
+            document.getElementById("h-skill").innerText = content[lang].h_skill;
+            document.getElementById("c-skill").innerHTML = content[lang].c_skill;
+            document.getElementById("h-course").innerText = content[lang].h_course;
+            document.getElementById("c-course").innerHTML = content[lang].c_course;
+            document.getElementById("h-research").innerText = content[lang].h_research;
+            document.getElementById("c-research").innerHTML = content[lang].c_research;
+            document.getElementById("c-footer").innerText = content[lang].footer;
+
+            // 更新按钮状态
+            document.getElementById("btn-zh").classList.toggle("active", lang === 'zh');
+            document.getElementById("btn-en").classList.toggle("active", lang === 'en');
+        }
+    </script>
 </body>
+
 </html>
