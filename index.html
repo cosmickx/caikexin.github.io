@@ -8,51 +8,72 @@
 
     <style>
         :root {
-            --primary-color: #3f6df6;
-            --accent-color: #6a11cb;
-            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --primary-color: #1a2a6c; /* 深邃金融蓝 */
+            --accent-color: #3f6df6;  /* 科技亮蓝 */
+            --text-main: #2c3e50;
+            --bg-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
         }
 
         body {
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            /* 添加淡雅的线性渐变背景 */
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
             background: var(--bg-gradient);
             background-attachment: fixed;
             margin: 0;
-            color: #333;
+            color: var(--text-main);
             line-height: 1.8;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
+        }
+
+        /* 顶部装饰条 */
+        .top-quote {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
         /* 页眉样式 */
         .header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         h1 {
-            font-weight: 700;
-            font-size: 2.5rem;
-            color: #2c3e50;
+            font-weight: 800;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .motto {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 500;
             margin-bottom: 20px;
-            letter-spacing: -0.5px;
         }
 
         /* 按钮美化 */
         .lang-btn {
-            background: white;
+            background: transparent;
             color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            padding: 10px 25px;
-            margin: 5px;
-            border-radius: 30px;
+            border: 1.5px solid var(--primary-color);
+            padding: 8px 20px;
+            margin: 0 8px;
+            border-radius: 20px;
             cursor: pointer;
+            font-size: 0.9rem;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -60,109 +81,125 @@
         .lang-btn:hover {
             background: var(--primary-color);
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(63, 109, 246, 0.3);
+            box-shadow: 0 4px 12px rgba(26, 42, 108, 0.2);
         }
 
         /* 卡片升级 */
         .card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(5px); /* 玻璃磨砂感 */
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 35px;
-            margin-bottom: 25px;
-            border-radius: 15px;
+            margin-bottom: 30px;
+            border-radius: 20px;
             box-shadow: var(--card-shadow);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .card:hover {
-            transform: translateY(-5px); /* 悬停浮起 */
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(31, 38, 135, 0.15);
         }
 
         h2 {
-            color: #1a2a6c;
-            border-left: 5px solid var(--primary-color);
-            padding-left: 15px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
             margin-top: 0;
-            font-size: 1.4rem;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
         }
 
-        /* 技能列表特殊样式 */
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background: var(--accent-color);
+            margin-right: 12px;
+            border-radius: 3px;
+        }
+
+        /* 内容文本强化 */
+        p b {
+            color: var(--primary-color);
+            font-weight: 700;
+            background: linear-gradient(transparent 70%, #eef2ff 70%); /* 重点加粗并带淡色底纹 */
+        }
+
+        /* 技能标签 */
         #skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             padding: 0;
             list-style: none;
         }
 
         #skills li {
-            background: #eef2ff;
-            color: #3f6df6;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border: 1px solid #d0d7f7;
+            background: #f0f4ff;
+            color: var(--accent-color);
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #dbe4ff;
         }
 
+        /* 教育与课程专属样式 */
+        .edu-item {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        /* 页脚 */
         .footer {
             text-align: center;
-            color: #666;
-            margin-top: 50px;
-            font-size: 0.9rem;
-            padding-bottom: 30px;
+            color: #95a5a6;
+            margin-top: 60px;
+            font-size: 0.85rem;
+            padding-bottom: 40px;
         }
 
-        b { color: #1a2a6c; }
+        .quote-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-top: 1px dashed #ccc;
+            font-style: italic;
+            color: #7f8c8d;
+        }
 
     </style>
 
     <script>
         function switchLang(lang) {
             if (lang === "en") {
-                document.getElementById("title").innerText = "Personal Homepage";
+                document.getElementById("title").innerText = "Caikexin's Portfolio";
+                document.getElementById("motto").innerText = "Carpe Diem | Seize the Day";
                 document.getElementById("basic").innerHTML =
-                    "<b>Name:</b> Caikexin<br><b>University:</b> East China University of Political Science and Law<br><b>Major:</b> Quantitative Finance (Class of 2024)<br><b>Research Interest:</b> Financial Technology (FinTech)<br><b>Email:</b> caikx2018@outlook.com";
+                    "<b>Name:</b> Caikexin<br><b>University:</b> East China University of Political Science and Law<br><b>Major:</b> <b>Quantitative Finance</b> (Class of 2024)<br><b>Research Interest:</b> <b>Financial Technology (FinTech)</b><br><b>Email:</b> caikx2018@outlook.com";
                 document.getElementById("intro").innerText =
-                    "I am currently an undergraduate student majoring in Quantitative Finance at East China University of Political Science and Law. My academic interests lie mainly in financial technology (FinTech), quantitative finance, and the application of data analysis in modern financial systems. Through systematic training in economics, finance, and statistics, I hope to gradually develop a solid analytical foundation and explore how emerging technologies can reshape financial markets and financial services.";
+                    "I am currently an undergraduate student majoring in Quantitative Finance at ECUPL. My academic interests lie mainly in financial technology (FinTech), quantitative finance, and the application of data analysis in modern financial systems. I aim to build a solid analytical foundation and explore how emerging technologies reshape financial services.";
                 document.getElementById("research").innerText =
-                    "My current research interests include financial technology, digital finance, financial data analysis, and the application of quantitative methods in financial markets. In the future, I hope to further explore topics such as data-driven financial analysis, algorithmic finance, and the integration of technology and financial infrastructure.";
+                    "My current research interests include financial technology, digital finance, financial data analysis, and the application of quantitative methods in financial markets. I am driven to explore data-driven financial analysis and algorithmic finance.";
                 document.getElementById("skills").innerHTML =
-                    "<li>IELTS</li><li>Python programming (basic data analysis)</li><li>Statistical and quantitative analysis</li><li>Economic and financial research writing</li><li>Financial data interpretation</li>";
+                    "<li>IELTS</li><li>Python Programming</li><li>Data Analysis</li><li>Statistical Analysis</li><li>Academic Writing</li><li>Financial Modeling</li>";
                 document.getElementById("education").innerHTML =
-                    "East China University of Political Science and Law<br>Major: Quantitative Finance (2024–Present)";
+                    "<div class='edu-item'>East China University of Political Science and Law</div>Major: Quantitative Finance (2024–Present)";
                 document.getElementById("courses").innerHTML =
-                    "Statistics, Public Finance, Microeconomics, Macroeconomics, Financial Markets, Accounting";
-                document.getElementById("award").innerText =
-                    "Third Prize, Comprehensive Scholarship of East China University of Political Science and Law";
+                    "<b>Statistics</b>, Public Finance, <b>Microeconomics</b>, <b>Macroeconomics</b>, Financial Markets, Accounting";
+                document.getElementById("award").innerHTML =
+                    "<b>Third Prize</b>, Comprehensive Scholarship of ECUPL";
                 document.getElementById("plan").innerText =
-                    "In the future, I hope to continue developing interdisciplinary knowledge at the intersection of finance and technology. I am particularly interested in exploring how data science, financial modeling, and digital financial infrastructure can contribute to innovation in modern financial systems.";
+                    "In the future, I hope to continue developing interdisciplinary knowledge at the intersection of finance and technology, focusing on data science and digital financial infrastructure.";
                 document.getElementById("update").innerText =
                     "Last updated: March 2026";
             } else {
-                document.getElementById("title").innerText = "个人主页";
-                document.getElementById("basic").innerHTML =
-                    "<b>姓名：</b>蔡可歆<br><b>学校：</b>华东政法大学<br><b>专业：</b>数量金融（2024级）<br><b>研究方向：</b>金融科技 FinTech<br><b>邮箱：</b>caikx2018@outlook.com";
-                document.getElementById("intro").innerText =
-                    "我目前就读于华东政法大学数量金融专业。我的学习兴趣主要集中在金融科技（FinTech）、数据分析以及量化方法在现代金融体系中的应用。通过系统学习经济学、金融学与统计学等基础课程，我希望逐步建立扎实的理论基础，并进一步探索金融与新兴技术结合所带来的创新发展。";
-                document.getElementById("research").innerText =
-                    "目前我主要关注金融科技、数字金融、金融数据分析以及量化方法在金融市场中的应用。未来希望能够进一步深入研究数据驱动的金融分析、金融科技创新以及技术在金融基础设施中的应用。";
-                document.getElementById("skills").innerHTML =
-                    "<li>IELTS</li><li>Python基础编程</li><li>数据分析</li><li>统计分析</li><li>经济金融研究与学术写作</li>";
-                document.getElementById("education").innerHTML =
-                    "华东政法大学<br>数量金融专业（2024级）";
-                document.getElementById("courses").innerHTML =
-                    "统计学、财政学、微观经济学、宏观经济学、金融市场、会计学";
-                document.getElementById("award").innerText =
-                    "华东政法大学综合奖学金三等奖";
-                document.getElementById("plan").innerText =
-                    "未来我希望继续在金融与技术交叉领域进行学习与探索，重点关注金融科技的发展以及数据分析、金融建模等方法在金融实践中的应用，并逐步提升自己的研究能力。";
-                document.getElementById("update").innerText =
-                    "最后更新：2026年3月";
+                // 中文版本保持默认或手动填回
+                location.reload(); // 简单处理，或者像上面一样逐个 innerHTML 替换
             }
         }
     </script>
@@ -171,9 +208,11 @@
 <body>
 
     <div class="container">
+        <div class="top-quote">"The grass is greener on the other side."</div>
 
         <div class="header">
-            <h1 id="title">个人主页</h1>
+            <h1 id="title">蔡可歆的个人主页</h1>
+            <div class="motto" id="motto">Carpe Diem | 及时行乐，活在当下</div>
             <button class="lang-btn" onclick="switchLang('zh')">中文</button>
             <button class="lang-btn" onclick="switchLang('en')">English</button>
         </div>
@@ -182,9 +221,9 @@
             <h2>基本信息 / Basic Information</h2>
             <p id="basic">
                 <b>姓名：</b>蔡可歆<br>
-                <b>学校：</b>华东政法大学<br>
-                <b>专业：</b>数量金融（2024级）<br>
-                <b>研究方向：</b>金融科技 FinTech<br>
+                <b>学校：</b><b>华东政法大学</b><br>
+                <b>专业：</b><b>数量金融（2024级）</b><br>
+                <b>研究方向：</b><b>金融科技 FinTech</b><br>
                 <b>邮箱：</b>caikx2018@outlook.com
             </p>
         </div>
@@ -192,14 +231,14 @@
         <div class="card">
             <h2>个人简介 / Personal Introduction</h2>
             <p id="intro">
-                我目前就读于华东政法大学数量金融专业。我的学习兴趣主要集中在金融科技（FinTech）、数据分析以及量化方法在现代金融体系中的应用。通过系统学习经济学、金融学与统计学等基础课程，我希望逐步建立扎实的理论基础，并进一步探索金融与新兴技术结合所带来的创新发展。
+                我目前就读于<b>华东政法大学数量金融专业</b>。我的学习兴趣主要集中在<b>金融科技（FinTech）</b>、数据分析以及量化方法在现代金融体系中的应用。通过系统学习经济学、金融学与统计学等基础课程，我希望逐步建立扎实的理论基础，并进一步探索金融与新兴技术结合所带来的创新发展。
             </p>
         </div>
 
         <div class="card">
             <h2>研究兴趣 / Research Interests</h2>
             <p id="research">
-                目前我主要关注金融科技、数字金融、金融数据分析以及量化方法在金融市场中的应用。未来希望能够进一步深入研究数据驱动的金融分析、金融科技创新以及技术在金融基础设施中的应用。
+                目前我主要关注<b>金融科技、数字金融、金融数据分析</b>以及<b>量化方法</b>在金融市场中的应用。未来希望能够进一步深入研究数据驱动的金融分析、金融科技创新以及技术在金融基础设施中的应用。
             </p>
         </div>
 
@@ -211,55 +250,48 @@
                 <li>数据分析</li>
                 <li>统计分析</li>
                 <li>经济金融研究与学术写作</li>
+                <li>金融建模</li>
             </ul>
         </div>
 
         <div class="card">
             <h2>教育经历 / Education</h2>
-            <p id="education">
-                华东政法大学<br>
-                数量金融专业（2024级）
-            </p>
+            <div id="education">
+                <div class="edu-item">华东政法大学</div>
+                <b>数量金融专业</b>（2024级 - 至今）
+            </div>
         </div>
 
         <div class="card">
             <h2>课程经历 / Coursework</h2>
             <p id="courses">
-                统计学、财政学、微观经济学、宏观经济学、金融市场、会计学
+                <b>统计学</b>、财政学、<b>微观经济学</b>、<b>宏观经济学</b>、金融市场、会计学
             </p>
         </div>
 
         <div class="card">
             <h2>荣誉奖项 / Awards</h2>
             <p id="award">
-                华东政法大学综合奖学金三等奖
+                🏆 <b>华东政法大学综合奖学金三等奖</b>
             </p>
         </div>
 
         <div class="card">
-            <h2>未来研究计划 / Future Academic Interests</h2>
+            <h2>未来研究计划 / Future Plans</h2>
             <p id="plan">
-                未来我希望继续在金融与技术交叉领域进行学习与探索，重点关注金融科技的发展以及数据分析、金融建模等方法在金融实践中的应用，并逐步提升自己的研究能力。
+                未来我希望继续在<b>金融与技术交叉领域</b>进行学习与探索，重点关注金融科技的发展以及数据分析、金融建模等方法在金融实践中的应用，并逐步提升自己的研究能力。
             </p>
+            <div class="quote-box">
+                "It's not who I am underneath, but what I do that defines me."
+            </div>
         </div>
 
         <div class="footer">
             <p id="update">最后更新：2026年3月</p>
+            <p style="font-size: 0.7rem; opacity: 0.6;">© 2026 Caikexin. All Rights Reserved.</p>
         </div>
 
     </div>
 
 </body>
-
-</html>
-月
-
-</p>
-
-</div>
-
-</div>
-
-</body>
-
 </html>
